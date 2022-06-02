@@ -1,7 +1,19 @@
-import React from 'react'
+import {useEffect} from 'react'
+import useGetDataBase from '../hooks/useGetDataBase'
 import ContenedorAnimes from './ContenedorAnimes'
 
 const ContenedorResultados = () => {
+    const {arrayData,cargando}=useGetDataBase()
+
+    
+    useEffect(() => {
+        
+    
+      return () => {
+        
+      }
+    }, [])
+    
     return (
         <div>
             <div className="grid mt-5">
