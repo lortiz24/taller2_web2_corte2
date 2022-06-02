@@ -1,7 +1,7 @@
-const getDatabase = () => {
-  return (
-    <div>getDatabase</div>
-  )
+
+
+const getDatabase = async() => {
+   
 }
 
 export default getDatabase

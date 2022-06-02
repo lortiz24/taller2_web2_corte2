@@ -1,4 +1,5 @@
 import { useState } from "react";
+import getDatabase from "../helpers/getDatabase";
 const InputName = ({ setvaloresBusquedas }) => {
   const [valorBusqueda, setvalorBusqueda] = useState('')
 
@@ -14,7 +15,10 @@ const InputName = ({ setvaloresBusquedas }) => {
     setvaloresBusquedas((lista => [valorBusqueda, ...lista]))
    
     setvalorBusqueda('')
+    
   }
+
+
   return (
     <form onSubmit={handleSubmit}>
       <input
