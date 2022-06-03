@@ -4,12 +4,12 @@ import { getFirestore} from 'firebase/firestore/lite';
 import 'firebase/firestore'
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDua9_uUhc_WD_o2XkP6KSMGPd8Hsx8mfc",
-  authDomain: "taller3debwe.firebaseapp.com",
-  projectId: "taller3debwe",
-  storageBucket: "taller3debwe.appspot.com",
-  messagingSenderId: "182752513620",
-  appId: "1:182752513620:web:60e9c87711309310efa7c1"
+  apiKey: "AIzaSyCJIWWo2t0R9vbDpvO4i6FLUPvrFh3lb24",
+  authDomain: "taller3debweb.firebaseapp.com",
+  projectId: "taller3debweb",
+  storageBucket: "taller3debweb.appspot.com",
+  messagingSenderId: "374009522876",
+  appId: "1:374009522876:web:7a477d1af05570f25b3eb9"
 };
 
 // Initialize Firebase

@@ -1,41 +1,40 @@
-import React, { useState, useEffect } from 'react'
-import AnimeItem from './AnimeItem'
-import UseGetAnimes from '../hooks/UseGetAnimes'
-import useCreateDocs from '../hooks/useCreateDocs'
-import createDocsDatabase from '../helpers/createDoscDatabase'
-const ContenedorAnimes = ({ valorBusqueda}) => {
-  const { animes, cargandoAnime } = UseGetAnimes(valorBusqueda)
- 
-  /* useEffect(() => {
-    animes.length!==0 && createDocsDatabase({valorBusqueda,animes})
-    
-  }, [animes]) */
+import React, { useState, useEffect } from "react";
+import AnimeItem from "./AnimeItem";
+import UseGetAnimes from "../hooks/UseGetAnimes";
+import useCreateDocs from "../hooks/useCreateDocs";
+import createDocsDatabase from "../helpers/createDoscDatabase";
+import useGetDataBase from "../hooks/useGetDataBase";
+const ContenedorAnimes = ({ valorBusqueda }) => {
+  const { animes, cargandoAnime } = UseGetAnimes(valorBusqueda);
+  console.log(valorBusqueda,animes)
+  const {id,guardando}=useCreateDocs({valorBusqueda,animes})
   
-  console.log({valorBusqueda,animes});
+  //console.log(`el objeto ${id} es`);
 
-  console.log(valorBusqueda, cargandoAnime, animes)
+  //console.log({valorBusqueda,cargandoAnime,animes});
+
   return (
     <>
       <h3>Busqueda: {valorBusqueda}</h3>
-      {cargandoAnime && <p>Cargando</p>}
-      <div className="grid mt-5">
-
-        {animes?.map(anime => (
-          <>
-          <article><AnimeItem key={anime.mal_id} {...anime} /></article>
-          
-          </>
-          
-        ))}
-
-      </div>
-
+      {cargandoAnime ? (
+        <p>Cargando</p>
+      ) : (
+        <div className="row">
+          <div className="grid mt-5">
+            {animes?.map((anime) => (
+              <div key={anime.mal_id}>
+                <AnimeItem key={anime.mal_id} {...anime} />
+              </div>
+            ))}
+          </div>
+          <div className="grid mt-2 row">
+            <button type="button" className="btn btn-primary">Guardar</button>
+            <button type="button" className="btn btn-danger">Borrar del historial</button>
+          </div>
+        </div>
+      )}
     </>
+  );
+};
 
-
-
-
-  )
-}
-
-export default ContenedorAnimes
+export default ContenedorAnimes;

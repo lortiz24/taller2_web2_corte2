@@ -1,20 +1,20 @@
 import { useState } from "react";
 
-const InputName = ({ setvaloresBusquedas }) => {
-  const [valorBusqueda, setvalorBusqueda] = useState('')
+const InputName = ({setvaloresBusquedas }) => {
+  const [valorInput, setvalorInput] = useState('')
 
   const handleChange = (e) => {
-    setvalorBusqueda(e.target.value)
+    setvalorInput(e.target.value)
   }
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (valorBusqueda.trim().length === 0) return alert("Digite el nombre del anime");
+    if (valorInput.trim().length === 0) return alert("Digite el nombre del anime");
 
-    setvaloresBusquedas((lista => [valorBusqueda, ...lista]))
-   
-    setvalorBusqueda('')
+    
+    setvaloresBusquedas(lista=>[valorInput,...lista])
+    setvalorInput('')
     
   }
 
@@ -26,7 +26,7 @@ const InputName = ({ setvaloresBusquedas }) => {
         type="text"
         placeholder="Ingrese el nombre del anime"
         onChange={handleChange}
-        value={valorBusqueda}
+        value={valorInput}
       />
     </form>
   );

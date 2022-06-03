@@ -4,23 +4,26 @@ import useGetDataBase from '../hooks/useGetDataBase'
 import ContenedorAnimes from './ContenedorAnimes'
 
 const ContenedorResultados = ({ valoresBusquedas }) => {
-    //const {arrayData,cargando}=useGetDataBase()
-
 
     return (
+        <>
+            <div className='row'>
+                <ul>
+                    {
+                        valoresBusquedas?.map((valorBusqueda) => (
 
-        <div className=" mt-5">
-            <hr />
-            <ol>
-                {
-                    valoresBusquedas.map((valorBusqueda, index) => (
-                        <ContenedorAnimes key={`${valorBusqueda}${index}`} valorBusqueda={valorBusqueda} />
-                    ))
-                }
+                            <li key={valorBusqueda}>
+                                <ContenedorAnimes key={valorBusqueda} valorBusqueda={valorBusqueda} />
+                            </li>
 
-            </ol>
-        </div>
+                        ))
+                    }
 
+                </ul>
+
+            </div>
+
+        </>
     )
 }
 
