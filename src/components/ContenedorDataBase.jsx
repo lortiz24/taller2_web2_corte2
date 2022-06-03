@@ -1,19 +1,22 @@
 import AnimeItem from "./AnimeItem";
-const ContenedorDataBase = ({ valorBusqueda, animes }) => {
+import useGetDataBase from "../hooks/useGetDataBase";
+import deleteDatabase from "../helpers/deleteDatabase";
+const ContenedorDataBase = ({ valorBusqueda, animes,id}) => {
 
     const handleEdit = () => {
-
+        
     }
 
     const handleDelete = () => {
-
+        console.log('Eliminando ',id);
+        deleteDatabase(id)
     }
     return (
         <div className='mt-3'>
             <h3 >Busqueda: {valorBusqueda}</h3>
             <div className="grid mt-3">
                 {animes?.map((anime) => (
-                    <div className="card-group" style={{ "width": "15rem" }}>
+                    <div className="card-group" style={{ "width": "15rem" }} key={anime.mal_id}>
                         <AnimeItem key={anime.mal_id} {...anime} />
                     </div>
                 ))}

@@ -6,6 +6,7 @@ import ContenedorAnimes from './ContenedorAnimes'
 
 const ContenedorResultados = ({ valoresBusquedas }) => {
     const { arrayData, cargando } = useGetDataBase()
+    
     return (
         <>
             <div className='row'>
