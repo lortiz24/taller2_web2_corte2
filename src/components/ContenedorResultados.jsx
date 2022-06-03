@@ -18,7 +18,9 @@ const ContenedorResultados = ({ valoresBusquedas }) => {
                 {cargando && <p>Cargando datos de DataBase</p>}
                 {
                     arrayData?.map((item) => (
-                        <ContenedorDataBase key={item.valorBusqueda} {...item} />
+                        <div key={item.valorBusqueda} className='mt-3 border-top'>
+                            <ContenedorDataBase key={item.valorBusqueda} {...item} />
+                        </div>
                     ))
                 }
 

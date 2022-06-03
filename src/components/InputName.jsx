@@ -20,8 +20,9 @@ const InputName = ({setvaloresBusquedas }) => {
 
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="form-group"onSubmit={handleSubmit}>
       <input
+        class="form-control"
         name="name"
         type="text"
         placeholder="Ingrese el nombre del anime"
