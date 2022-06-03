@@ -1,5 +1,8 @@
 import { useEffect, useState } from 'react'
+import createDocsDatabase from '../helpers/createDoscDatabase';
 import getAnimes from '../helpers/getAnimes';
+import getDatabase from '../helpers/getDatabase';
+
 
 const UseGetAnimes = (valorBusqueda) => {
     
@@ -13,10 +16,9 @@ const UseGetAnimes = (valorBusqueda) => {
     useEffect(() => {
         getAnimes(valorBusqueda)
                 .then((animes) => {
-                    setEstado({
-                        animes: animes,
-                        cargandoAnime: false
-                    })
+                    console.log('Creando el documento en base de datos')
+                    createDocsDatabase({valorBusqueda,animes})
+                    setEstado({animes,cargandoAnime:false})
                 })
     }, [valorBusqueda])
     return estado;

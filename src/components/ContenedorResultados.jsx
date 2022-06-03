@@ -1,25 +1,26 @@
 import { useEffect, useState } from 'react'
 import UseGetAnimes from '../hooks/UseGetAnimes'
 import useGetDataBase from '../hooks/useGetDataBase'
+import ContenedorDataBase from './ContenedorDataBase'
 import ContenedorAnimes from './ContenedorAnimes'
 
 const ContenedorResultados = ({ valoresBusquedas }) => {
-
+    const { arrayData, cargando } = useGetDataBase()
     return (
         <>
             <div className='row'>
-                <ul>
-                    {
-                        valoresBusquedas?.map((valorBusqueda) => (
+                {
+                    valoresBusquedas?.map((valorBusqueda) => (
+                        <ContenedorAnimes key={valorBusqueda} valorBusqueda={valorBusqueda} />
+                    ))
+                }
 
-                            <li key={valorBusqueda}>
-                                <ContenedorAnimes key={valorBusqueda} valorBusqueda={valorBusqueda} />
-                            </li>
-
-                        ))
-                    }
-
-                </ul>
+                {cargando && <p>Cargando datos de DataBase</p>}
+                {
+                    arrayData?.map((item) => (
+                        <ContenedorDataBase key={item.valorBusqueda} {...item} />
+                    ))
+                }
 
             </div>
 

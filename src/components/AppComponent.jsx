@@ -5,7 +5,7 @@ import InputName from './InputName'
 
 const AppComponent = () => {
     const [valoresBusquedas, setvaloresBusquedas] = useState([])
-
+    
     return (
         <>
             <div className="container">

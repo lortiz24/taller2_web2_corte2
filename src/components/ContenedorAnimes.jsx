@@ -6,12 +6,7 @@ import createDocsDatabase from "../helpers/createDoscDatabase";
 import useGetDataBase from "../hooks/useGetDataBase";
 const ContenedorAnimes = ({ valorBusqueda }) => {
   const { animes, cargandoAnime } = UseGetAnimes(valorBusqueda);
-  console.log(valorBusqueda,animes)
-  const {id,guardando}=useCreateDocs({valorBusqueda,animes})
-  
-  //console.log(`el objeto ${id} es`);
 
-  //console.log({valorBusqueda,cargandoAnime,animes});
 
   return (
     <>

@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import getDatabase from '../helpers/getDatabase'
 
 const useGetDataBase = () => {
+    
     const [datosDB, setDatosDB] = useState({
         arrayData: [],
         cargando: true
