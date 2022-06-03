@@ -1,9 +1,11 @@
-import React from 'react'
+import React from "react";
 
-const AnimeItem = () => {
-  return (
-    <div>Resultados</div>
-  )
-}
+const AnimeItem = ({ title, synopsis, image_url, episodes, url, mal_id }) => {
+  return <div>
+   
+    <img src={image_url} alt="" />
+    
+  </div>;
+};
 
-export default AnimeItem
+export default AnimeItem;

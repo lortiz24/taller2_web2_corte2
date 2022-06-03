@@ -1,5 +1,5 @@
 import { useState } from "react";
-import getDatabase from "../helpers/getDatabase";
+
 const InputName = ({ setvaloresBusquedas }) => {
   const [valorBusqueda, setvalorBusqueda] = useState('')
 

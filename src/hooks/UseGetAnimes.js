@@ -1,25 +1,25 @@
-import {useEffect,useState} from 'react'
+import { useEffect, useState } from 'react'
 import getAnimes from '../helpers/getAnimes';
 
 const UseGetAnimes = (valorBusqueda) => {
-  
+
     const [estado, setEstado] = useState({
         animes: [],
-        cargando: true,
+        cargandoAnime: true,
     });
 
-    
+
 
     useEffect(() => {
         getAnimes(valorBusqueda)
-            .then((animes) =>{
-                return{
-                    animes:animes,
-                    cargando:false
-                }
+            .then((animes) => {
+                setEstado({
+                    animes: animes,
+                    cargandoAnime: false
+                })
             })
     }, [])
-    
+
     return estado;
 
 }

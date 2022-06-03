@@ -1,32 +1,26 @@
-import {useEffect} from 'react'
+import { useEffect, useState } from 'react'
+import UseGetAnimes from '../hooks/UseGetAnimes'
 import useGetDataBase from '../hooks/useGetDataBase'
 import ContenedorAnimes from './ContenedorAnimes'
 
-const ContenedorResultados = () => {
-    const {arrayData,cargando}=useGetDataBase()
+const ContenedorResultados = ({ valoresBusquedas }) => {
+    //const {arrayData,cargando}=useGetDataBase()
 
-    
-    useEffect(() => {
-        
-    
-      return () => {
-        
-      }
-    }, [])
-    
+
     return (
-        <div>
-            <div className="grid mt-5">
-                <article className='ContenedorAnimes'>
-                    <ContenedorAnimes />
-                </article>
-                <article className='ContenedorAnimes'>
-                    <ContenedorAnimes />
-                </article>
 
+        <div className=" mt-5">
+            <hr />
+            <ol>
+                {
+                    valoresBusquedas.map((valorBusqueda, index) => (
+                        <ContenedorAnimes key={`${valorBusqueda}${index}`} valorBusqueda={valorBusqueda} />
+                    ))
+                }
 
-            </div>
+            </ol>
         </div>
+
     )
 }
 

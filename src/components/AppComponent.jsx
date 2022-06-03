@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import ContenedorAnimes from './ContenedorAnimes'
 import ContenedorResultados from './ContenedorResultados'
 import InputName from './InputName'
 
@@ -12,7 +13,7 @@ const AppComponent = () => {
                 <hr />
                 <div >
                     <InputName setvaloresBusquedas={setvaloresBusquedas} />
-                    <ContenedorResultados/>
+                    <ContenedorResultados valoresBusquedas={valoresBusquedas} />
                 </div>
             </div>
 

@@ -9,10 +9,11 @@ const useGetDataBase = () => {
     useEffect(() => {
         getDatabase()
             .then((arrayData) => {
-                return {
+                
+                setDatosDB({
                     arrayData,
                     cargando: false
-                }
+                })
             }).catch((err) => {
                 console.log(err)
             });
