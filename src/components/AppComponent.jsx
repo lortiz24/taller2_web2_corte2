@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import ContenedorAnimes from './ContenedorAnimes'
+
 import ContenedorResultados from './ContenedorResultados'
 import InputName from './InputName'
 
