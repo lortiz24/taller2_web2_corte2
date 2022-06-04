@@ -35,7 +35,7 @@ const InputName = ({setvaloresBusquedas,arrayData,valoresBusquedas }) => {
 
 
   return (
-    <form className="form-group"onSubmit={handleSubmit}>
+    <form className="form-group animate__animated animate__fadeInDown"onSubmit={handleSubmit} >
       <input
         className="form-control"
         name="name"

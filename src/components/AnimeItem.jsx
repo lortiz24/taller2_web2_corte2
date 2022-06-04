@@ -3,7 +3,7 @@ import React from "react";
 const AnimeItem = ({ title, image_url, episodes, url, mal_id }) => {
   return (
     <>
-      <div className="card p-1 m-1">
+      <div className="card p-1 m-1 ">
         <img src={image_url} className="card-img-top" alt={title} />
         <div className="card-body">
           <h5 className="card-title">{title}</h5>

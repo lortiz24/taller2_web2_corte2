@@ -20,7 +20,7 @@ const ContenedorDataBase = ({ valorBusqueda, animes, id, setControllerGetDB }) =
     }
 
     return (
-        <div className='mt-3'>
+        <div className='mt-3 animate__animated animate__fadeInDown'>
             <h3 >Busqueda: {valorBusqueda}</h3>
             <div className="p-2 shadow p-3 mb-5 bg-white rounded">
                 <div className="card-group d-flex flex-wrap align-content-center animate__animated animate__fadeIn" >

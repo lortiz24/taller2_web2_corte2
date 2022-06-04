@@ -3,8 +3,9 @@ import { collection,addDoc} from 'firebase/firestore/lite';
 
 const createDocsDatabase = async (search={},coleccion='busquedas') => {
     const busquedasDB = collection(db, coleccion);
-    const docRef = await addDoc(busquedasDB,search);
-    return docRef.id
+    const resul = await addDoc(busquedasDB,search);
+  
+    return resul.id
 }
 
 export default createDocsDatabase
