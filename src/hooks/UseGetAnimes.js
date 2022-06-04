@@ -16,7 +16,6 @@ const UseGetAnimes = (valorBusqueda,setControllerGetDB) => {
     useEffect(() => {
         getAnimes(valorBusqueda)
                 .then((animes) => {
-                    console.log('Creando el documento en base de datos')
                     createDocsDatabase({valorBusqueda,animes})
                     setEstado({animes,cargandoAnime:false})
                     setControllerGetDB(true)

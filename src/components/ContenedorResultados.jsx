@@ -2,18 +2,18 @@ import { useEffect, useState } from 'react'
 import UseGetAnimes from '../hooks/UseGetAnimes'
 import useGetDataBase from '../hooks/useGetDataBase'
 import ContenedorDataBase from './ContenedorDataBase'
-import ContenedorAnimes from './ContenedorAnimes'
+import BuscarGuardar from './BuscarGuardar'
 
 const ContenedorResultados = ({ valoresBusquedas }) => {
     const [controllerGetDB, setControllerGetDB] = useState(false);
-    const { arrayData, cargando } = useGetDataBase(controllerGetDB,setControllerGetDB)
-   
+    const { arrayData, cargando } = useGetDataBase(controllerGetDB, setControllerGetDB)
+
     return (
         <>
             <div className='row'>
                 {
-                    valoresBusquedas?.map((valorBusqueda) => (
-                        <ContenedorAnimes key={valorBusqueda} valorBusqueda={valorBusqueda} setControllerGetDB={setControllerGetDB}/>
+                    valoresBusquedas?.map((valorBusqueda,index) => (
+                        <BuscarGuardar key={`${index}${valorBusqueda}`} valorBusqueda={valorBusqueda} setControllerGetDB={setControllerGetDB} />
                     ))
                 }
 
@@ -21,7 +21,7 @@ const ContenedorResultados = ({ valoresBusquedas }) => {
                 {
                     arrayData?.map((item) => (
                         <div key={item.valorBusqueda} className='mt-3 border-top'>
-                            <ContenedorDataBase key={item.valorBusqueda} {...item} setControllerGetDB={setControllerGetDB}/>
+                            <ContenedorDataBase key={item.valorBusqueda} {...item} setControllerGetDB={setControllerGetDB} />
                         </div>
                     ))
                 }
