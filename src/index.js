@@ -7,7 +7,7 @@ import AppComponent from './components/AppComponent';
 
 ReactDOM.render(
   <React.StrictMode>
-    <AppComponent />
+    <App />
 
   </React.StrictMode>,
   document.getElementById('root')

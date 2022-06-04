@@ -4,7 +4,7 @@ import getAnimes from '../helpers/getAnimes';
 import getDatabase from '../helpers/getDatabase';
 
 
-const UseGetAnimes = (valorBusqueda) => {
+const UseGetAnimes = (valorBusqueda,setControllerGetDB) => {
     
     const [estado, setEstado] = useState({
         animes: [],
@@ -19,7 +19,9 @@ const UseGetAnimes = (valorBusqueda) => {
                     console.log('Creando el documento en base de datos')
                     createDocsDatabase({valorBusqueda,animes})
                     setEstado({animes,cargandoAnime:false})
+                    setControllerGetDB(true)
                 })
+                
     }, [valorBusqueda])
     return estado;
 
