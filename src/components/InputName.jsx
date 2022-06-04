@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const InputName = ({setvaloresBusquedas }) => {
+const InputName = ({setvaloresBusquedas,arrayData }) => {
   const [valorInput, setvalorInput] = useState('')
 
   const handleChange = (e) => {
@@ -9,11 +9,18 @@ const InputName = ({setvaloresBusquedas }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+     
+    const existe=arrayData.filter(item => item.valorBusqueda===valorInput)
+   
     if (valorInput.trim().length === 0){
        alert("Digite el nombre del anime")
        return
     };
+
+    if(existe.length!==0){
+      alert('Ya realizo esa busqueda')
+      return;
+    }
 
     
     setvaloresBusquedas(lista=>[valorInput,...lista])

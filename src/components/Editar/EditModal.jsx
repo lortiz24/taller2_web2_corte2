@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import updateDatabase from "../../helpers/updateDatabase";
-const EditModal = ({ setModalEstao, id, valorBusqueda ,setControllerGetDB}) => {
+const EditModal = ({ setModalEstao, id, valorBusqueda, setControllerGetDB }) => {
     const [input, setInput] = useState(valorBusqueda);
 
     const cerrarModal = () => {
@@ -13,9 +13,14 @@ const EditModal = ({ setModalEstao, id, valorBusqueda ,setControllerGetDB}) => {
     };
     const handledSubmit = (e) => {
         e.preventDefault();
-        updateDatabase(id, {valorBusqueda:input});
-        cerrarModal()
-        setControllerGetDB(true);
+        updateDatabase(id, { valorBusqueda: input })
+            .then((result) => {
+                cerrarModal()
+                setControllerGetDB(true);
+            }).catch((err) => {
+                console.log(err);
+            });
+
     };
 
     return (

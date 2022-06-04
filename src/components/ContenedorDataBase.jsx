@@ -10,8 +10,13 @@ const ContenedorDataBase = ({ valorBusqueda, animes, id, setControllerGetDB }) =
 
     const handleDelete = () => {
         //console.log('Eliminando ',id);
-        deleteDatabase(id);
-        setControllerGetDB(true)
+        deleteDatabase(id)
+            .then((result) => {
+                setControllerGetDB(true)
+            }).catch((err) => {
+                console.log(err)
+            });
+        
     }
 
     return (

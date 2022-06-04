@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import getDatabase from '../helpers/getDatabase'
 
-const useGetDataBase = (controllesDataBase,setControllerGetDB) => {
+const useGetDataBase = (controllerGetDB,setControllerGetDB) => {
     
     const [datosDB, setDatosDB] = useState({
         arrayData: [],
@@ -18,9 +18,9 @@ const useGetDataBase = (controllesDataBase,setControllerGetDB) => {
             }).catch((err) => {
                 console.log(err)
             });
-            console.log('Reseteando reseteo===============')
+            
             setControllerGetDB(false)
-    }, [controllesDataBase])
+    }, [controllerGetDB])
 
 
     return datosDB;
