@@ -4,20 +4,15 @@ import useGetDataBase from '../hooks/useGetDataBase'
 import ContenedorDataBase from './ContenedorDataBase'
 import BuscarGuardar from './BuscarGuardar'
 
-const ContenedorResultados = ({ valoresBusquedas }) => {
+const ContenedorResultados = ({ valorBusqueda }) => {
     const [controllerGetDB, setControllerGetDB] = useState(false);
-    
+
     const { arrayData, cargando } = useGetDataBase(controllerGetDB, setControllerGetDB)
 
     return (
         <>
             <div className='row'>
-                {
-                    valoresBusquedas?.map((valorBusqueda,index) => (
-                        <BuscarGuardar key={`${index}${valorBusqueda}`} valorBusqueda={valorBusqueda} setControllerGetDB={setControllerGetDB} arrayData={arrayData}/>
-                    ))
-                }
-
+                <BuscarGuardar valorBusqueda={valorBusqueda} setControllerGetDB={setControllerGetDB} arrayData={arrayData} />
                 {cargando && <p>Cargando datos de DataBase</p>}
                 {
                     arrayData?.map((item) => (
