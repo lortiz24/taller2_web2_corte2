@@ -3,6 +3,7 @@ import createDocsDatabase from '../helpers/createDoscDatabase';
 import getAnimes from '../helpers/getAnimes';
 
 const UseGetAnimes = (valorBusqueda, setControllerGetDB) => {
+    
     const [estado, setEstado] = useState({
         animes: [],
         cargandoAnime: true,

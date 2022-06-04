@@ -3,6 +3,7 @@ import AnimeItem from "./AnimeItem";
 import UseGetAnimes from "../hooks/UseGetAnimes";
 
 const BuscarGuardar = ({ valorBusqueda, setControllerGetDB }) => {
+  
   UseGetAnimes(valorBusqueda,setControllerGetDB);
  
   return (
