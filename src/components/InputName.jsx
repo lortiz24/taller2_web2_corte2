@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const InputName = ({setvaloresBusquedas,arrayData }) => {
+const InputName = ({setvaloresBusquedas,arrayData,valoresBusquedas }) => {
   const [valorInput, setvalorInput] = useState('')
 
   const handleChange = (e) => {
@@ -10,16 +10,21 @@ const InputName = ({setvaloresBusquedas,arrayData }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
      
-    const existe=arrayData.filter(item => item.valorBusqueda===valorInput)
-   
+    const existeEnBd=arrayData.filter(item => item.valorBusqueda===valorInput)
+    const existeEnBusquedaPrevia=valoresBusquedas.filter(item => item===valorInput)
     if (valorInput.trim().length === 0){
        alert("Digite el nombre del anime")
        return
     };
 
-    if(existe.length!==0){
-      alert('Ya realizo esa busqueda')
+    if(existeEnBd.length!==0){
+      alert('Ya existe en base de datos una busqueda con ese mismo nombre')
       return;
+    }
+
+    if (existeEnBusquedaPrevia.length!==0) {
+      alert('Ya tiene una busqueda con ese nombre, por favor actualize para borrar historial')
+      return
     }
 
     

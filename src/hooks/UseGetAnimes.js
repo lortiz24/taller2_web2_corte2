@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import createDocsDatabase from '../helpers/createDoscDatabase';
 import getAnimes from '../helpers/getAnimes';
 
-const UseGetAnimes = (valorBusqueda, setControllerGetDB) => {
+const UseGetAnimes = (valorBusqueda) => {
     
     const [estado, setEstado] = useState({
         animes: [],
@@ -12,16 +12,7 @@ const UseGetAnimes = (valorBusqueda, setControllerGetDB) => {
 
     useEffect(() => {
         getAnimes(valorBusqueda)
-            .then((animes) => {
-                console.log(`Entrando a buscar =========con ${valorBusqueda}`)
-                createDocsDatabase({ valorBusqueda, animes })
-                    .then((result) => {
-                        console.log('Seteando ')
-                        setControllerGetDB(true)
-                    }).catch((err) => {
-                        console.log(err)
-                    });
-                
+            .then((animes) => {     
                 setEstado({ animes, cargandoAnime: false })         
             })
 

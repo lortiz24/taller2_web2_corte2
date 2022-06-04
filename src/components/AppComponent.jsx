@@ -14,13 +14,13 @@ const AppComponent = () => {
             <div className="container" >
                 <h1 className='text-center mt-3'>Busqueda de animes</h1>
 
-                <InputName setvaloresBusquedas={setvaloresBusquedas} arrayData={arrayData}/>
+                <InputName setvaloresBusquedas={setvaloresBusquedas} arrayData={arrayData} valoresBusquedas={valoresBusquedas}/>
                 {cargando && <p>Cargando datos de DataBase</p>}
                 
                 <div className='row'>
                 {
                     valoresBusquedas?.map((valorBusqueda) => (
-                        <BuscarGuardar key={valorBusqueda} valorBusqueda={valorBusqueda} setControllerGetDB={setControllerGetDB}/>
+                        <BuscarGuardar key={valorBusqueda} valorBusqueda={valorBusqueda} setControllerGetDB={setControllerGetDB} setvaloresBusquedas={setvaloresBusquedas}/>
                     ))
                 }        
                 {

@@ -23,7 +23,7 @@ const ContenedorDataBase = ({ valorBusqueda, animes, id, setControllerGetDB }) =
         <div className='mt-3'>
             <h3 >Busqueda: {valorBusqueda}</h3>
             <div className="p-2 shadow p-3 mb-5 bg-white rounded">
-                <div className="card-group d-flex flex-wrap align-content-center" >
+                <div className="card-group d-flex flex-wrap align-content-center animate__animated animate__fadeIn" >
 
                     {animes?.map((anime) => (
                         <AnimeItem key={anime.mal_id} {...anime} />
