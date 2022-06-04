@@ -17,6 +17,7 @@ const InputName = ({setValorBusqueda }) => {
 
     
     setValorBusqueda(valorInput)
+    
     setvalorInput('')
     
   }
