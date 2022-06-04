@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import getDatabase from '../helpers/getDatabase'
 
-const useGetDataBase = (controllesDataBase,setcontrollesDataBase) => {
+const useGetDataBase = (controllesDataBase,setControllerGetDB) => {
     
     const [datosDB, setDatosDB] = useState({
         arrayData: [],
@@ -19,7 +19,7 @@ const useGetDataBase = (controllesDataBase,setcontrollesDataBase) => {
                 console.log(err)
             });
 
-            setcontrollesDataBase(false)
+            setControllerGetDB(false)
     }, [controllesDataBase])
 
 

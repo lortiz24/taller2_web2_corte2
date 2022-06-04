@@ -10,7 +10,10 @@ const InputName = ({setvaloresBusquedas }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (valorInput.trim().length === 0) return alert("Digite el nombre del anime");
+    if (valorInput.trim().length === 0){
+       alert("Digite el nombre del anime")
+       return
+    };
 
     
     setvaloresBusquedas(lista=>[valorInput,...lista])

@@ -4,23 +4,25 @@ import getAnimes from '../helpers/getAnimes';
 import getDatabase from '../helpers/getDatabase';
 
 
-const UseGetAnimes = (valorBusqueda,setControllerGetDB) => {
-    
+const UseGetAnimes = (valorBusqueda, arrayData, setControllerBusqueda) => {
+    const aux = arrayData.filter(item => item.valorBusqueda === valorBusqueda)
+
     const [estado, setEstado] = useState({
         animes: [],
         cargandoAnime: true,
     });
-    //console.log(`use a ${valorBusqueda} su estado esta ${estado.animes.toString()}`)
+    console.log('Entrando')
 
 
     useEffect(() => {
         getAnimes(valorBusqueda)
-                .then((animes) => {
-                    createDocsDatabase({valorBusqueda,animes})
-                    setEstado({animes,cargandoAnime:false})
-                    setControllerGetDB(true)
-                })
-                
+            .then((animes) => {
+                createDocsDatabase({ valorBusqueda, animes })
+                setEstado({ animes, cargandoAnime: false })
+                setControllerBusqueda(true)
+
+            })
+
     }, [valorBusqueda])
     return estado;
 
