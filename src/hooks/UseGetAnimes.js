@@ -4,22 +4,27 @@ import getAnimes from '../helpers/getAnimes';
 import getDatabase from '../helpers/getDatabase';
 
 
-const UseGetAnimes = (valorBusqueda, arrayData, setControllerBusqueda) => {
+const UseGetAnimes = (valorBusqueda, arrayData,setControllerGetDB) => {
     const aux = arrayData.filter(item => item.valorBusqueda === valorBusqueda)
 
     const [estado, setEstado] = useState({
         animes: [],
         cargandoAnime: true,
     });
-    console.log('Entrando')
+    console.log('Entrando a consultar api')
 
 
     useEffect(() => {
         getAnimes(valorBusqueda)
             .then((animes) => {
-                createDocsDatabase({ valorBusqueda, animes })
-                setEstado({ animes, cargandoAnime: false })
-                setControllerBusqueda(true)
+                if (aux.length === 0) {
+                    createDocsDatabase({ valorBusqueda, animes })
+                    setEstado({ animes, cargandoAnime: false })
+
+                    console.log('Mandando a setear bd')
+                    setControllerGetDB(true)
+                    //alert('Guardado con exito')
+                }
 
             })
 

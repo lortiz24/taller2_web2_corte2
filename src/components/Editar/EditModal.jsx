@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Formulario from "./Formulario";
+
 import updateDatabase from "../../helpers/updateDatabase";
 const EditModal = ({ setModalEstao, animes, id, valorBusqueda ,setControllerGetDB}) => {
     const [input, setInput] = useState(valorBusqueda);

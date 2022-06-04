@@ -6,8 +6,7 @@ import BuscarGuardar from './BuscarGuardar'
 
 const ContenedorResultados = ({ valoresBusquedas }) => {
     const [controllerGetDB, setControllerGetDB] = useState(false);
-    //Para consultar firebase cuando se haga una nueva busqueda
-    const [controllerBusqueda, setControllerBusqueda] = useState(false);
+    
     const { arrayData, cargando } = useGetDataBase(controllerGetDB, setControllerGetDB)
 
     return (
@@ -15,7 +14,7 @@ const ContenedorResultados = ({ valoresBusquedas }) => {
             <div className='row'>
                 {
                     valoresBusquedas?.map((valorBusqueda,index) => (
-                        <BuscarGuardar key={`${index}${valorBusqueda}`} valorBusqueda={valorBusqueda} setControllerBusqueda={setControllerBusqueda} arrayData={arrayData}/>
+                        <BuscarGuardar key={`${index}${valorBusqueda}`} valorBusqueda={valorBusqueda} setControllerGetDB={setControllerGetDB} arrayData={arrayData}/>
                     ))
                 }
 
