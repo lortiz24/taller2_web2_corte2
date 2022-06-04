@@ -10,7 +10,7 @@ const UseGetAnimes = (valorBusqueda,setControllerGetDB) => {
         animes: [],
         cargandoAnime: true,
     });
-    console.log(`use a ${valorBusqueda} su estado esta ${estado.animes.toString()}`)
+    //console.log(`use a ${valorBusqueda} su estado esta ${estado.animes.toString()}`)
 
 
     useEffect(() => {

@@ -12,7 +12,6 @@ const AppComponent = () => {
                 <h1 className='text-center mt-3'>Busqueda de animes</h1>
 
                 <InputName setvaloresBusquedas={setvaloresBusquedas} />
-                
                 <ContenedorResultados valoresBusquedas={valoresBusquedas} />
             </div>
             
