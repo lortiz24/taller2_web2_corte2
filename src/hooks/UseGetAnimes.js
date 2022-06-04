@@ -4,7 +4,7 @@ import getAnimes from '../helpers/getAnimes';
 import getDatabase from '../helpers/getDatabase';
 
 
-const UseGetAnimes = (valorBusqueda, arrayData,setControllerGetDB) => {
+const UseGetAnimes = (valorBusqueda,setControllerGetDB) => {
     
 
     const [estado, setEstado] = useState({
@@ -15,7 +15,6 @@ const UseGetAnimes = (valorBusqueda, arrayData,setControllerGetDB) => {
 
 
     useEffect(() => {
-        if(valorBusqueda){
             getAnimes(valorBusqueda)
             .then((animes) => {
 
@@ -24,7 +23,6 @@ const UseGetAnimes = (valorBusqueda, arrayData,setControllerGetDB) => {
                     console.log('Mandando a setear bd')
                     setControllerGetDB(true)
             })
-        }
 
     }, [valorBusqueda])
     return estado;

@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const InputName = ({setValorBusqueda }) => {
+const InputName = ({setvaloresBusquedas }) => {
   const [valorInput, setvalorInput] = useState('')
 
   const handleChange = (e) => {
@@ -16,8 +16,7 @@ const InputName = ({setValorBusqueda }) => {
     };
 
     
-    setValorBusqueda(valorInput)
-    
+    setvaloresBusquedas(lista=>[valorInput,...lista])
     setvalorInput('')
     
   }
