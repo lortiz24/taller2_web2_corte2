@@ -1,2 +1,5 @@
 AMPLIFY
 https://main.dlcn4v476h1a1.amplifyapp.com/
+
+Netlify:
+Ocurrio errores en la compilacion, la imagen de los errores esta ajdunta en este repositorio
